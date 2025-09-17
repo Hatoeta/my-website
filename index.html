@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hatoeta - Levantine & Sustainable Cuisine 🌿</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+<style>
+  /* Reset & Base Styles */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafaf5;
+    color: #333;
+  }
+
+  /* Full-width header with logo spanning entire width */
+  header {
+    width: 100%;
+    background-color: transparent; /* No background color to let logo stand out */
+  }
+
+  /* Logo as a full-width banner */
+.header-logo {
+  width: 100%;
+  display: block;
+}
+
+.header-logo img {
+  width: 100%; /* Full width of the header */
+  height: auto;
+  display: block;
+}
+
+/* Sections with logo as background, no border here */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  background: transparent;
+  background-image: url('https://yourcdn.com/path-to-your-logo.png'); /* Replace with your logo URL */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%; /* Adjust as needed */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Overlay for readability */
+section > * {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Header styles for nav links */
+nav {
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgba(224, 192, 151, 0.8);
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #6b4f3b;
+}
+
+/* Buttons & links */
+a.button, .menu-link {
+  display: inline-block;
+  background-color: #6b4f3b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Reservation form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button[type="submit"] {
+  background-color: #6b4f3b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #8b6b4f;
+}
+
+/* Footer styles */
+footer {
+  background-color: rgba(224, 192, 151, 0.8);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 20%-width Logo Banner -->
+<header>
+  <div class="header-logo">
+    <img src="img11.jpg" alt="Hatoeta Logo" /> <!-- Replace with your logo URL -->
+  </div>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#reservation">Reservation</a>
+  </nav>
+</header>
+
+<!-- Home -->
+<section id="home">
+  <h2>Welcome to Hatoeta 🌿</h2>
+  <p>Experience authentic Palestinian-Jordanian cuisine with a modern, sustainable twist. Share, enjoy, and care for our planet!</p>
+</section>
+
+<!-- Menu -->
+<section id="menu">
+  <h2>Menu 🍽️</h2>
+  <a class="menu-link" href="https://yourdomain.com/path-to-your-menu.pdf" target="_blank">Download Full Menu (PDF)</a>
+</section>
+
+<!-- About Us -->
+<section id="about" class="about">
+  <h2>About Us ✨</h2>
+  <p>Hatoeta is the Arabic word for "Story." With Hatoeta, we aim to share our stories. Central to this story are two elements — looking back and looking forward:</p>
+  <h3>Honoring Tradition</h3>
+  <p>We celebrate the Palestinian-Jordanian culinary heritage of our grandparents. Many dishes are shared in this tradition, making Hatoeta a “sharing” restaurant. It's best to order 2-3 dishes per person, but of course, if you prefer a plate for yourself, that's perfectly fine.</p>
+  <h3>Focus on Sustainability</h3>
+  <p>We actively pursue dishes with a low environmental impact. You'll find many vegetarian and vegan options here, reflecting our commitment to sustainability and caring for our planet.</p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <h2>Contact 📍</h2>
+  <p><strong>Address:</strong> Koninklijkeaan 2, 2600 Berchem, Antwerp</p>
+  <p><strong>Email:</strong> <a href="mailto:Hatoeta.restaurant@gmail.com">Hatoeta.restaurant@gmail.com</a></p>
+  <p><strong>Follow us:</strong> 
+    <a href="https://www.tiktok.com/@hatoeta" target="_blank">TikTok</a> | <a href="https://www.instagram.com/hatoeta_belgium" target="_blank">Instagram</a>
+  </p>
+  <p>Delivery via Takeaway. For catering & events, send us an email.</p>
+</section>
+
+<!-- Reservation -->
+<section id="reservation" class="reservation">
+  <h2>Reserve Your Table 📝</h2>
+  <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST['name'];
+        $persons = $_POST['persons'];
+        $datetime = $_POST['datetime'];
+        $contact = $_POST['contact'];
+
+        $to = "Hatoeta.restaurant@gmail.com"; // your email
+        $subject = "New Reservation from $name";
+        $message = "Name: $name\nPersons: $persons\nDate & Time: $datetime\nContact: $contact";
+        $headers = "From: no-reply@hatoeta.com";
+
+        if (mail($to, $subject, $message, $headers)) {
+            echo "<p style='color:green;'>Thank you! Your reservation has been sent.</p>";
+        } else {
+            echo "<p style='color:red;'>Sorry, there was an error. Please try again.</p>";
+        }
+    }
+  ?>
+  <form method="POST" action="#reservation">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="persons">Number of Persons:</label>
+    <input type="number" id="persons" name="persons" min="1" required />
+
+    <label for="datetime">Date & Time:</label>
+    <input type="datetime-local" id="datetime" name="datetime" required />
+
+    <label for="contact">Contact Info:</label>
+    <input type="text" id="contact" name="contact" required />
+
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Hatoeta. All rights reserved.</p>
+  <p>
+    Follow us:
+    <a href="#" target="_blank">TikTok</a> | <a href="#" target="_blank">Instagram</a>
+  </p>
+</footer>
+</body>
+</html>
