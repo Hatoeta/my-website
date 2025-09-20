@@ -179,45 +179,6 @@ footer {
   <p>Delivery via Takeaway. For catering & events, send us an email.</p>
 </section>
 
-<!-- Reservation -->
-<section id="reservation" class="reservation">
-  <h2>Reserve Your Table 📝</h2>
-  <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_POST['name'];
-        $persons = $_POST['persons'];
-        $datetime = $_POST['datetime'];
-        $contact = $_POST['contact'];
-
-        $to = "Hatoeta.restaurant@gmail.com"; // your email
-        $subject = "New Reservation from $name";
-        $message = "Name: $name\nPersons: $persons\nDate & Time: $datetime\nContact: $contact";
-        $headers = "From: no-reply@hatoeta.com";
-
-        if (mail($to, $subject, $message, $headers)) {
-            echo "<p style='color:green;'>Thank you! Your reservation has been sent.</p>";
-        } else {
-            echo "<p style='color:red;'>Sorry, there was an error. Please try again.</p>";
-        }
-    }
-  ?>
-  <form method="POST" action="#reservation">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required />
-
-    <label for="persons">Number of Persons:</label>
-    <input type="number" id="persons" name="persons" min="1" required />
-
-    <label for="datetime">Date & Time:</label>
-    <input type="datetime-local" id="datetime" name="datetime" required />
-
-    <label for="contact">Contact Info:</label>
-    <input type="text" id="contact" name="contact" required />
-
-    <button type="submit">Book Now</button>
-  </form>
-</section>
-
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 Hatoeta. All rights reserved.</p>
@@ -229,3 +190,4 @@ footer {
 </body>
 
 </html>
+
