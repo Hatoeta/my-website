@@ -16,26 +16,39 @@
     color: #333;
   }
 
-  /* Full-width header with logo spanning entire width */
-header {
-  width: 100%;
-  background-color: transparent;
-  padding: 20px 0;   /* gives vertical space */
-  text-align: center; /* centers logo & nav */
-}
 
-  /* Logo as a full-width banner */
-.header-logo {
-  width: 100%;
-  display: block;
-}
+/* Header */
+  header {
+    width: 100%;
+    text-align: center;
+  }
 
-.header-logo img {
-  width: 150px;    /* or whatever size fits your header */
-  height: auto;    /* maintain aspect ratio */
-  display: block;
-  margin: 0 auto;  /* center horizontally */
-}
+  /* Logo section */
+  .header-logo {
+    padding: 20px 0; /* spacing around logo */
+  }
+
+  .header-logo img {
+    width: 150px; /* adjust logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Orange navigation bar */
+  nav {
+    background-color: rgba(224, 192, 151, 0.8); /* orange bar */
+    padding: 12px 0;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
 
 /* Sections with logo as background, no border here */
 section {
@@ -59,19 +72,6 @@ section > * {
   border-radius: 0;
 }
 
-/* Header styles for nav links */
-nav {
-  padding: 10px 0;
-  text-align: center;
-  background-color: rgba(224, 192, 151, 0.8);
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
 
 /* Heading styles */
 h2 {
@@ -201,6 +201,7 @@ footer {
 </body>
 
 </html>
+
 
 
 
