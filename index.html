@@ -44,6 +44,7 @@
     position: sticky;   /* stick in place */
     top: 0;             /* stick to the very top */
     z-index: 1000;      /* stay above content */
+    position: relative; /* belangrijk voor taalwisselaar */
   }
 
   nav a {
@@ -53,6 +54,18 @@
     font-weight: bold;
   }
 
+  /* Taalwisselaar */
+  .lang-switch {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lang-switch a {
+    margin: 0 5px;
+    font-weight: normal;
+  }
 
 /* Sections with logo as background, no border here */
 section {
@@ -149,6 +162,12 @@ footer {
     <a href="#about">About Us</a>
     <a href="#contact">Contact</a>
     <a href="#reservation">Reservation</a>
+
+    <!-- Taalwisselaar -->
+    <div class="lang-switch">
+      <a href="/index.html">EN</a> | 
+      <a href="/index-nl.html">NL</a>
+    </div>
   </nav>
 </header>
 
