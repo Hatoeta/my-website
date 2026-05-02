@@ -53,7 +53,19 @@
     font-weight: bold;
   }
 
+/* Taalwisselaar */
+  .lang-switch {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
+  .lang-switch a {
+    margin: 0 5px;
+    font-weight: normal;
+  }
+  
 /* Sections with logo as background, no border here */
 section {
   padding: 40px 20px;
@@ -149,6 +161,12 @@ footer {
     <a href="#about">Over Ons</a>
     <a href="#contact">Contact</a>
     <a href="#reservation">Reservatie</a>
+
+   <!-- Taalwisselaar -->
+    <div class="lang-switch">
+      <a href="/index.html">EN</a> | 
+      <a href="/index-nl.html">NL</a>
+    </div>   
   </nav>
 </header>
 
